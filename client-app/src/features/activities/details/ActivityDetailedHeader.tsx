@@ -22,6 +22,7 @@ const activityImageTextStyle = {
 const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
   activity
 }) => {
+  const host = activity.attendees.filter(x => x.isHost)[0];
   const rootStore = useContext(RootStoreContext);
   const { attendActivity, cancelAttendance, loading, target, deleteActivity, submitting } = rootStore.activityStore;
   return (
@@ -43,7 +44,10 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
                 />
                 <p>{format(activity.date, 'eeee do MMMM')}</p>
                 <p>
-                  Hosted by <strong>Bob</strong>
+                  Hosted by{' '}
+                  <Link to={`/profile/${host.username}`}>
+                    <strong>{host.displayName}</strong>
+                  </Link>
                 </p>
               </Item.Content>
             </Item>
@@ -67,11 +71,14 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
             onClick={e => deleteActivity(e, activity.id)} 
             color='red' 
             floated='right'
+            as={Link}
+            to='/'
           >
             Delete Event
           </Button>
           </Segment>
-        ): activity.isGoing ? (
+
+        ) : activity.isGoing ? (
           <Button loading={loading} onClick={cancelAttendance}>
             Cancel attendance
           </Button>

@@ -37,6 +37,16 @@ const ActivityDetailedInfo: React.FC<{activity: IActivity}> = ({activity}) => {
             </span>
           </Grid.Column>
         </Grid>
+        <Grid verticalAlign='middle'>
+          <Grid.Column width={1}>
+            <Icon name='world' size='large' color='teal' />
+          </Grid.Column>
+          <Grid.Column width={11}>
+            <span>
+              {activity.category}
+            </span>
+          </Grid.Column>
+        </Grid>
       </Segment>
     </Segment.Group>
   );

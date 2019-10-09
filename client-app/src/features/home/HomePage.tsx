@@ -19,7 +19,7 @@ const HomePage = () => {
             alt='logo'
             style={{ marginBottom: 12 }}
           />
-          Reactivities
+          Project Earth
         </Header>
         {isLoggedIn && user ? (
           <Fragment>
@@ -30,7 +30,7 @@ const HomePage = () => {
           </Fragment>
         ) : (
           <Fragment>
-          <Header as='h2' inverted content={`Welcome to Reactivitities`} />
+          <Header as='h2' inverted content={`Welcome to Project Earth!`} />
           <Button onClick={() => openModal(<LoginForm />)} size='huge' inverted>
             Login
           </Button>

@@ -47,7 +47,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
             <NavBar />
             <Container style={{ marginTop: '7em' }}>
               <Switch>
-                <PrivateRoute exact path='/activities' component={ActivityDashboard} />
+                <Route exact path='/activities' component={ActivityDashboard} />
                 <PrivateRoute path='/activities/:id' component={ActivityDetails} />
                 <PrivateRoute
                   key={location.key}

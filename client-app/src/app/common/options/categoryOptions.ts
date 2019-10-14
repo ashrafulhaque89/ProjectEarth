@@ -1,8 +1,8 @@
 export const category = [
-  { key: 'ngo', text: 'Non Govornment Entity', value: 'NGO Event' },
-  { key: 'government', text: 'Government Body', value: 'Government Hosted Event' },
-  { key: 'business', text: 'Business Entity', value: 'Private Corporate Event' },
-  { key: 'private', text: 'Private Individual', value: 'Private Individual Event' },
-  { key: 'group', text: 'Public/Private Group', value: 'Group Event' },
-  { key: 'other', text: 'Others', value: 'Other Event' }
+  { key: 'Non Govornment(NGO) Event', text: 'Non Govornment(NGO) Event', value: 'Non Govornment(NGO) Event' },
+  { key: 'Government Hosted Event', text: 'Government Hosted Event', value: 'Government Hosted Event' },
+  { key: 'Private Corporate Event', text: 'Private Corporate Event', value: 'Private Corporate Event' },
+  { key: 'Private Individual Event', text: 'Private Individual Event', value: 'Private Individual Event' },
+  { key: 'Group Event', text: 'Group Event', value: 'Group Event' },
+  { key: 'Other Event', text: 'Other Event', value: 'Other Event' }
 ];

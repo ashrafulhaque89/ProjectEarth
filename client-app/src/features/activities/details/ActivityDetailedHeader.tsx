@@ -72,7 +72,7 @@ const ActivityDetailedHeader: React.FC<{ activity: IActivity }> = ({
             color='red' 
             floated='right'
             as={Link}
-            to='/'
+            to='/activities'
           >
             Delete Event
           </Button>

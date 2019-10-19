@@ -51,7 +51,7 @@ const ActivityDetailedChat = () => {
 
           <FinalForm 
             onSubmit={addComment}
-            render={({handleSubmit, submitting, form}) => (
+            render={({handleSubmit, submitting, form, invalid, pristine}) => (
               <Form onSubmit={() => handleSubmit()!.then(() => form.reset())}>
               <Field 
                 name='body'
@@ -61,6 +61,7 @@ const ActivityDetailedChat = () => {
               />
               <Button
                 loading={submitting}
+                disabled={invalid || pristine}
                 content='Add Reply'
                 labelPosition='left'
                 icon='edit'

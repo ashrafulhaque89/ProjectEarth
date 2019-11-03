@@ -82,6 +82,7 @@ const Activities = {
 };
 
 const User = {
+  alluser: (): Promise<IUser> => requests.get('/listuser'),
   current: (): Promise<IUser> => requests.get('/user'),
   login: (user: IUserFormValues): Promise<IUser> =>
     requests.post(`/user/login`, user),

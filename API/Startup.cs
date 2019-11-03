@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using API.Middleware;
 using API.SignalR;
 using Application.Activities;
+using Application.User;
 using Application.Interfaces;
 using Application.Profiles;
 using AutoMapper;
@@ -51,6 +52,7 @@ namespace API
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
+            services.AddMediatR(typeof(UserList.Handler).Assembly);
             services.AddAutoMapper(typeof(List.Handler));
             services.AddSignalR();
             services.AddMvc(opt =>

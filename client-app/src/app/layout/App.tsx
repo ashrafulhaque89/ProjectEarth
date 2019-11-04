@@ -24,6 +24,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
   const {setAppLoaded, token, appLoaded} = rootStore.commonStore;
   const {getUser} = rootStore.userStore;
+  const {getAllUser} = rootStore.userStore;
 
   useEffect(() => {
     if (token) {
@@ -31,7 +32,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
     } else {
       setAppLoaded();
     }
-  }, [getUser, setAppLoaded, token])
+  }, [getUser, getAllUser, setAppLoaded, token])
 
   if (!appLoaded)  return <LoadingComponent content='Loading app...' />
 

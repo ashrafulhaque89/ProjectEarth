@@ -52,6 +52,19 @@ export default class UserStore {
     }
   };
 
+  @action getAllUser = async () => {
+    try {
+      const user = await agent.User.alluser();
+      runInAction(() => {
+        this.user = user;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
   @action logout = () => {
     this.rootStore.commonStore.setToken(null);
     this.user = null;

@@ -27,7 +27,8 @@ namespace Application.User
                    return new User
                    {
                        Username = u.UserName,  
-                       DisplayName = u.DisplayName
+                       DisplayName = u.DisplayName,
+                       Image = u.Photos.FirstOrDefault(x => x.IsMain)?.Url
                    };
                    
                }).ToList();

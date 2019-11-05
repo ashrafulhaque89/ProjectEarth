@@ -84,6 +84,7 @@ const Activities = {
 const User = {
   alluser: (): Promise<IUser> => requests.get('/listuser'),
   current: (): Promise<IUser> => requests.get('/user'),
+  deleteuser: (id: string) => requests.del(`/listuser/${id}`),
   login: (user: IUserFormValues): Promise<IUser> =>
     requests.post(`/user/login`, user),
   register: (user: IUserFormValues): Promise<IUser> =>

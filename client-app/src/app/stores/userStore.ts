@@ -3,6 +3,7 @@ import { IUser, IUserFormValues } from '../models/user';
 import agent from '../api/agent';
 import { RootStore } from './rootStore';
 import { history } from '../..';
+import { SyntheticEvent } from 'react';
 
 export default class UserStore {
   rootStore: RootStore;
@@ -11,6 +12,9 @@ export default class UserStore {
   }
 
   @observable user: IUser | null = null;
+  @observable activityRegistry = new Map();
+  @observable submitting = false;
+  @observable target = '';
 
   @computed get isLoggedIn() {
     return !!this.user;
@@ -59,6 +63,28 @@ export default class UserStore {
         this.user = user;
       });
     } catch (error) {
+      console.log(error);
+    }
+  };
+
+  @action deleteUser = async (
+    event: SyntheticEvent<HTMLButtonElement>,
+    id: string
+  ) => {
+    this.submitting = true;
+    this.target = event.currentTarget.name;
+    try {
+      await agent.User.deleteuser(id);
+      runInAction('deleting user', () => {
+        this.activityRegistry.delete(id);
+        this.submitting = false;
+        this.target = '';
+      });
+    } catch (error) {
+      runInAction('delete user error', () => {
+        this.submitting = false;
+        this.target = '';
+      });
       console.log(error);
     }
   };

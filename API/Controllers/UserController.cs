@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using System.Collections.Generic;
+using System;
 
 namespace API.Controllers
 {
@@ -29,6 +30,5 @@ namespace API.Controllers
         {
             return await Mediator.Send(new CurrentUser.Query());
         }
-
     }
 }

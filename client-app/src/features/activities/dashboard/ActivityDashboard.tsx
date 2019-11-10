@@ -7,12 +7,14 @@ import InfiniteScroll from 'react-infinite-scroller';
 import ActivityFilters from './ActivityFilters';
 import ActivityListItemPlaceholder from './ActivityListItemPlaceholder';
 import { IUser } from '../../../app/models/user';
+import UserList from './UserList';
+import axios from 'axios';
 
 interface IProps {
   users: IUser[];
 }
 
-const ActivityDashboard: React.FC<IProps> = ({users}) => {
+const ActivityDashboard: React.FC<IProps> = () => {
   const rootStore = useContext(RootStoreContext);
   const {
     loadActivities,
@@ -22,12 +24,25 @@ const ActivityDashboard: React.FC<IProps> = ({users}) => {
     totalPages
   } = rootStore.activityStore;
   const [loadingNext, setLoadingNext] = useState(false);
+  const [users, setUsers] = useState<IUser[]>([]);
 
   const handleGetNext = () => {
     setLoadingNext(true);
     setPage(page + 1);
     loadActivities().then(() => setLoadingNext(false));
   };
+
+  useEffect(() => {
+    axios
+      .get<IUser[]>('http://localhost:5000/api/listuser')
+      .then(response => {
+        let users: IUser[] = [];
+        response.data.forEach(user => {       
+          users.push(user);
+        })
+        setUsers(users);
+      });
+  }, []);
 
   useEffect(() => {
     loadActivities();
@@ -51,6 +66,7 @@ const ActivityDashboard: React.FC<IProps> = ({users}) => {
       </Grid.Column>
       <Grid.Column width={6}>
         <ActivityFilters />
+         <UserList users={users}/>
       </Grid.Column>
       <Grid.Column width={10}>
         <Loader active={loadingNext} />

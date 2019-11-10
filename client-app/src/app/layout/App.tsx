@@ -1,5 +1,5 @@
-import React, { Fragment,useState, useContext, useEffect } from 'react';
-import { Container, Menu } from 'semantic-ui-react';
+import React, { Fragment, useContext, useEffect } from 'react';
+import { Container} from 'semantic-ui-react';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import { observer } from 'mobx-react-lite';
@@ -19,15 +19,11 @@ import LoadingComponent from './LoadingComponent';
 import ModalContainer from '../common/modals/ModalContainer';
 import ProfilePage from '../../features/profiles/ProfilePage';
 import PrivateRoute from './PrivateRoute';
-import axios from 'axios';
-import { IUser } from '../models/user';
-import UserList from '../../features/activities/dashboard/UserList';
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
   const {setAppLoaded, token, appLoaded} = rootStore.commonStore;
   const {getUser} = rootStore.userStore;
-  const [users, setUsers] = useState<IUser[]>([]);
 
   useEffect(() => {
     if (token) {
@@ -36,18 +32,6 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
       setAppLoaded();
     }
   }, [getUser,setAppLoaded, token])
-
-  useEffect(() => {
-    axios
-      .get<IUser[]>('http://localhost:5000/api/listuser')
-      .then(response => {
-        let users: IUser[] = [];
-        response.data.forEach(user => {       
-          users.push(user);
-        })
-        setUsers(users);
-      });
-  }, []);
 
   if (!appLoaded)  return <LoadingComponent content='Loading app...' />
 
@@ -62,13 +46,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
           <Fragment>
             <NavBar />
             <Container style={{ marginTop: '7em' }}>
-            <Fragment>
-              <Menu vertical size={'large'} style={{ width: '20%', marginTop: 50 }}>
-              <UserList users={users}/>
-              </Menu>
-            </Fragment>
               <Switch>
-              <Route exact path='/listuser' component={UserList} />
                 <Route exact path='/activities' component={ActivityDashboard} />
                 <PrivateRoute path='/activities/:id' component={ActivityDetails} />
                 <PrivateRoute

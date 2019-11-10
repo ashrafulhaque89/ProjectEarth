@@ -55,11 +55,3 @@ export interface IAttendee {
   isHost: boolean;
   following?: boolean;
 }
-
-export interface IAllUser {
-  username: string;
-  displayName: string;
-  image: string;
-  isHost: boolean;
-  following?: boolean;
-}

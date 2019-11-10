@@ -19,7 +19,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AppUser>>> UserList()
+        public async Task<ActionResult<List<User>>> UserList()
         {
             return await Mediator.Send(new UserList.Query());
         }

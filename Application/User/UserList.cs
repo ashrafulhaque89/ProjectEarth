@@ -11,9 +11,9 @@ namespace Application.User
 {
     public class UserList
     {
-        public class Query : IRequest<List<User>> { }
+        public class Query : IRequest<List<AppUser>> { }
 
-       public class Handler : IRequestHandler<Query, List<User>>
+       public class Handler : IRequestHandler<Query, List<AppUser>>
         {
         private readonly DataContext _context;
             public Handler(DataContext context)
@@ -21,14 +21,14 @@ namespace Application.User
                 _context = context;
             }
 
-            public async Task<List<User>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<AppUser>> Handle(Query request, CancellationToken cancellationToken)
             {
                var userlist = (await _context.AppUsers.ToListAsync()).Select((u)=> {
-                   return new User
+                   return new AppUser
                    {
-                       Username = u.UserName,  
-                       DisplayName = u.DisplayName,
-                       Image = u.Photos.FirstOrDefault(x => x.IsMain)?.Url
+                        
+                       DisplayName = u.DisplayName
+            
                    };
                    
                }).ToList();

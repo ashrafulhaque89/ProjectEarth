@@ -6,8 +6,13 @@ import { RootStoreContext } from '../../../app/stores/rootStore';
 import InfiniteScroll from 'react-infinite-scroller';
 import ActivityFilters from './ActivityFilters';
 import ActivityListItemPlaceholder from './ActivityListItemPlaceholder';
+import { IUser } from '../../../app/models/user';
 
-const ActivityDashboard: React.FC = () => {
+interface IProps {
+  users: IUser[];
+}
+
+const ActivityDashboard: React.FC<IProps> = ({users}) => {
   const rootStore = useContext(RootStoreContext);
   const {
     loadActivities,

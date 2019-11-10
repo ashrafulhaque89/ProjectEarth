@@ -27,16 +27,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
   const {setAppLoaded, token, appLoaded} = rootStore.commonStore;
   const {getUser} = rootStore.userStore;
-  const {getAllUser} = rootStore.userStore;
   const [users, setUsers] = useState<IUser[]>([]);
-
-  useEffect(() => {
-    if (token) {
-      getAllUser().finally(() => setAppLoaded())
-    } else {
-      setAppLoaded();
-    }
-  }, [getUser, getAllUser, setAppLoaded, token])
 
   useEffect(() => {
     if (token) {
@@ -44,7 +35,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
     } else {
       setAppLoaded();
     }
-  }, [getUser, getAllUser, setAppLoaded, token])
+  }, [getUser,setAppLoaded, token])
 
   useEffect(() => {
     axios
@@ -75,7 +66,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
               <Menu vertical size={'large'} style={{ width: '20%', marginTop: 50 }}>
               <UserList users={users}/>
               </Menu>
-              </Fragment>
+            </Fragment>
               <Switch>
               <Route exact path='/listuser' component={UserList} />
                 <Route exact path='/activities' component={ActivityDashboard} />

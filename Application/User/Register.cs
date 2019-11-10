@@ -60,7 +60,8 @@ namespace Application.User
                 {
                     DisplayName = request.DisplayName,
                     Email = request.Email,
-                    UserName = request.Username
+                    UserName = request.Username,
+                    IsAdmin = false
                 };
 
                 var result = await _userManager.CreateAsync(user, request.Password);

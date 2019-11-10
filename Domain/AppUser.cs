@@ -8,6 +8,7 @@ namespace Domain
         public string id {get; set;}
         public string DisplayName { get; set; }
         public string Bio { get; set; }
+        public bool IsAdmin {get; set;}
         public virtual ICollection<UserActivity> UserActivities { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
         public virtual ICollection<UserFollowing> Followings { get; set; }

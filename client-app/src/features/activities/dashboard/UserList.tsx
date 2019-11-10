@@ -20,7 +20,7 @@ const UserList: React.FC<IProps> = ({
         inverted
         color='teal'
       >
-        See what other people are doing
+        See what other Users are doing
       </Segment>
       <Segment attached>
         <List relaxed divided>

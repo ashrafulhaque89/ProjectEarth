@@ -11,7 +11,10 @@ namespace Application.User
 {
     public class UserList
     {
-        public class Query : IRequest<List<User>> { }
+        public class Query : IRequest<List<User>> 
+        {
+            public string id { get; set; }
+        }
 
        public class Handler : IRequestHandler<Query, List<User>>
         {
@@ -28,7 +31,9 @@ namespace Application.User
                    {
                        Username = u.UserName,  
                        DisplayName = u.DisplayName,
-                       Image = u.Photos.FirstOrDefault(x => x.IsMain)?.Url
+                       Image = u.Photos.FirstOrDefault(x => x.IsMain)?.Url,
+                       IsAdmin = u.IsAdmin,
+                       id = u.id
                    };
                    
                }).ToList();

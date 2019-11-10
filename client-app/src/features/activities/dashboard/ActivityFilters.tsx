@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import { Menu, Header } from 'semantic-ui-react';
+import { Menu, Header, Segment } from 'semantic-ui-react';
 import { Calendar } from 'react-widgets';
 import { RootStoreContext } from '../../../app/stores/rootStore';
 import { observer } from 'mobx-react-lite';
@@ -10,7 +10,16 @@ const ActivityFilters = () => {
   return (
     <Fragment>
       <Menu vertical size={'large'} style={{ width: '100%', marginTop: 50 }}>
-        <Header icon={'filter'} attached color={'teal'} content={'Filters'} />
+      <Segment
+        textAlign='center'
+        style={{ border: 'none' }}
+        attached='top'
+        secondary
+        inverted
+        color='teal'
+      >
+        Filter Activities by attendence and Dates
+      </Segment>
         <Menu.Item
           active={predicate.size === 0}
           onClick={() => setPredicate('all', 'true')}

@@ -10,11 +10,7 @@ import { IUser } from '../../../app/models/user';
 import UserList from './UserList';
 import axios from 'axios';
 
-interface IProps {
-  users: IUser[];
-}
-
-const ActivityDashboard: React.FC<IProps> = () => {
+const ActivityDashboard: React.FC = () => {
   const rootStore = useContext(RootStoreContext);
   const {
     loadActivities,

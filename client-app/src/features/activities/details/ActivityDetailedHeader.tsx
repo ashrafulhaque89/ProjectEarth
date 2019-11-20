@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { RootStoreContext } from '../../../app/stores/rootStore';
 
 const activityImageStyle = {
-  filter: 'brightness(30%)'
+  filter: 'brightness(70%)'
 };
 
 const activityImageTextStyle = {

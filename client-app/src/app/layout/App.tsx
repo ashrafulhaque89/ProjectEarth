@@ -19,7 +19,6 @@ import LoadingComponent from './LoadingComponent';
 import ModalContainer from '../common/modals/ModalContainer';
 import ProfilePage from '../../features/profiles/ProfilePage';
 import PrivateRoute from './PrivateRoute';
-import AdminDashboard from '../../features/activities/dashboard/AdminDashboard';
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   const rootStore = useContext(RootStoreContext);
@@ -55,7 +54,6 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
                   path={['/createActivity', '/manage/:id']}
                   component={ActivityForm}
                 />
-                <PrivateRoute path='/admin' component={AdminDashboard} />
                 <PrivateRoute path='/profile/:username' component={ProfilePage} />
                 <PrivateRoute component={NotFound} />
               </Switch>

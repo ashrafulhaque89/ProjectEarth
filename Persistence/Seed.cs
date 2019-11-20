@@ -54,12 +54,12 @@ namespace Persistence
                 {
                     new Activity
                     {
-                        Title = "Past Activity 1",
+                        Title = "Reduce, reuse, and recycle",
                         Date = DateTime.Now.AddMonths(-2),
-                        Description = "Activity 2 months ago",
-                        Category = "Non Govornment(NGO) Event",
+                        Description = "Cut down on what you throw away. Follow the three -R's to conserve natural resources and landfill space.",
+                        Category = "Recycle-Reuse",
                         City = "London",
-                        Venue = "Pub",
+                        Venue = "Oxford Street Central",
                         UserActivities = new List<UserActivity>
                         {
                             new UserActivity
@@ -72,12 +72,12 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Past Activity 2",
+                        Title = "Bike more, drive less",
                         Date = DateTime.Now.AddMonths(-1),
-                        Description = "Activity 1 month ago",
-                        Category = "Non Govornment(NGO) Event",
+                        Description = "Let's ditch our private car whenever possible and use bycycle to reduce carbon footprint.",
+                        Category = "Carbon footprint reduction",
                         City = "Paris",
-                        Venue = "The Louvre",
+                        Venue = "City Centre",
                         UserActivities = new List<UserActivity>
                         {
                             new UserActivity
@@ -96,12 +96,12 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 1",
+                        Title = "Plant a tree",
                         Date = DateTime.Now.AddMonths(1),
-                        Description = "Activity 1 month in future",
-                        Category = "Government Hosted Event",
-                        City = "London",
-                        Venue = "Wembly Stadium",
+                        Description = "Trees provide food and oxygen. They help save energy, clean the air, and help combat climate change. So let's plant more trees together.",
+                        Category = "Tree plantation",
+                        City = "Everywhere",
+                        Venue = "All around the world",
                         UserActivities = new List<UserActivity>
                         {
                             new UserActivity
@@ -120,10 +120,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 2",
+                        Title = "Fundraiser event for greener world",
                         Date = DateTime.Now.AddMonths(2),
-                        Description = "Activity 2 months in future",
-                        Category = "Government Hosted Event",
+                        Description = "If we all donate our coffee money of one day, we can create someting bigger for our plant which can be much more impactful. We can donate for a cause- it can be anything.",
+                        Category = "Green Fundraising",
                         City = "London",
                         Venue = "Jamies Italian",
                         UserActivities = new List<UserActivity>
@@ -144,12 +144,12 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 3",
+                        Title = "Environmental networking event",
                         Date = DateTime.Now.AddMonths(3),
-                        Description = "Activity 3 months in future",
-                        Category = "Private Corporate Event",
-                        City = "London",
-                        Venue = "Pub",
+                        Description = "Networking event with NGO's and Corporate companies where organizations/individuals can connect and collaborate with each other for a greater cause towards saving our planet.",
+                        Category = "Environmental Networking event",
+                        City = "Dublin",
+                        Venue = "Dublin Convention Centre",
                         UserActivities = new List<UserActivity>
                         {
                             new UserActivity
@@ -168,10 +168,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 4",
+                        Title = "Choose sustainable",
                         Date = DateTime.Now.AddMonths(4),
-                        Description = "Activity 4 months in future",
-                        Category = "Private Corporate Event",
+                        Description = "Learn how to make smart food choices at www.fishwatch.gov",
+                        Category = "Other Event",
                         City = "London",
                         Venue = "British Museum",
                         UserActivities = new List<UserActivity>
@@ -186,10 +186,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 5",
+                        Title = "Save the planet",
                         Date = DateTime.Now.AddMonths(5),
-                        Description = "Activity 5 months in future",
-                        Category = "Private Individual Event",
+                        Description = "When you further your own education, you can help others understand the importance and value of our natural resources.",
+                        Category = "Other Event",
                         City = "London",
                         Venue = "Punch and Judy",
                         UserActivities = new List<UserActivity>
@@ -210,10 +210,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 6",
+                        Title = "Conserve water",
                         Date = DateTime.Now.AddMonths(6),
-                        Description = "Activity 6 months in future",
-                        Category = "Group Event",
+                        Description = "The less water you use, the less runoff and wastewater that eventually end up in the ocean.",
+                        Category = "Other Event",
                         City = "London",
                         Venue = "O2 Arena",
                         UserActivities = new List<UserActivity>
@@ -234,9 +234,9 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 7",
+                        Title = "Buy less plastic and bring a reusable shopping bag.",
                         Date = DateTime.Now.AddMonths(7),
-                        Description = "Activity 7 months in future",
+                        Description = "Shop wisely and let's save our planet together by reducing plastic usage.",
                         Category = "Other Event",
                         City = "Berlin",
                         Venue = "All",
@@ -258,12 +258,12 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 8",
+                        Title = "Educational Event",
                         Date = DateTime.Now.AddMonths(8),
-                        Description = "Activity 8 months in future",
+                        Description = "Awarness raising event for the environment",
                         Category = "Other Event",
-                        City = "London",
-                        Venue = "Pub",
+                        City = "Dhaka",
+                        Venue = "Reporter's institue",
                         UserActivities = new List<UserActivity>
                         {
                             new UserActivity

@@ -32,8 +32,7 @@ namespace Application.User
                        Username = u.UserName,  
                        DisplayName = u.DisplayName,
                        Image = u.Photos.FirstOrDefault(x => x.IsMain)?.Url,
-                       IsAdmin = u.IsAdmin,
-                       id = u.id
+                       IsAdmin = u.IsAdmin
                    };
                    
                }).ToList();
